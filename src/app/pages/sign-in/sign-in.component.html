@@ -1,0 +1,56 @@
+<div class="signin-body">
+    <div class="signin-container">
+        <div class="logo">
+            <div>
+                <img src="../../../assets/image/angular.svg" alt="angular"/>
+                <p>Angular Login page</p>
+                <p>First Time? Try Signing Up</p>
+            </div>
+        </div>
+        <div class="signin-form">
+            <div>
+                <h1>Login</h1>
+                <div class="form">
+                    <form [formGroup]="LoginForm" (ngSubmit)="submit()">
+                        <div class="form-input">
+                            <div class="input-top">
+                                <label>E-mail</label>
+                                <div *ngIf="formError['email']">
+                                    <div *ngIf="formError['email']['required']" class="error">
+                                        * email is required
+                                    </div>
+                                    <div *ngIf="formError['email']['email']" class="error">
+                                        * enter valid email
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <input type="email" id="email" formControlName="email"/>
+                                <img src="../../../assets/image/arroba.png" alt="mail"/>
+                            </div>
+                        </div>
+                        <div class="form-input">
+                            <div class="input-top">
+                                <label>Password</label>
+                                <div *ngIf="formError['password']">
+                                    <div *ngIf="formError['password']['required']" class="error">
+                                        * password is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <input type="password" id="pass" formControlName="password"/>
+                                <img src="../../../assets/image/password.png" alt="lock"/>
+                            </div>
+                        </div>
+
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div class="bottom-btn">
+                    Don't have account? <a routerLink="/signup">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
