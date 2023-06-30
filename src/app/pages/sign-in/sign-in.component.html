@@ -39,11 +39,11 @@
                                 </div>
                             </div>
                             <div class="input">
-                                <input type="password" id="pass" formControlName="password"/>
+                                <input type="password" id="pass" formControlName="password" (input)="onPasswordChange()"/>
                                 <img src="../../../assets/image/password.png" alt="lock"/>
                             </div>
                         </div>
-
+                        <div class="onsubmit_error" *ngIf="error.login"> {{ error.login }} </div>
                         <button type="submit">Login</button>
                     </form>
                 </div>

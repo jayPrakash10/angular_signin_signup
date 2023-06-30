@@ -23,7 +23,15 @@ export class SignInComponent implements OnInit {
     password: null
   };
 
+  error = {
+    login : "",
+  }
+
   ngOnInit(): void {
+  }
+
+  onPasswordChange() {
+    this.error.login = "";
   }
 
   submit() {
@@ -48,15 +56,16 @@ export class SignInComponent implements OnInit {
           this.router.navigate(["/home"]);
         } else {
           if(loginCredential.email !== signupCredential.email && loginCredential.password !== signupCredential.password) {
-            alert('Wrong Credential');
+            this.error.login = 'Wrong Credential';
           } else if(loginCredential.email !== signupCredential.email) {
-            alert('Wrong Credential');
+            this.error.login = 'Wrong Credential';
           } else if(loginCredential.password !== signupCredential.password) {
-            alert('Password does not match');
+            this.error.login = 'Password does not match';
           }
         }
       } else {
         alert('Data not found');
+        this.router.navigate(['/signup']);
       }
     }
   }

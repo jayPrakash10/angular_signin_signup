@@ -105,6 +105,12 @@
     margin-right: 1em;
 }
 
+.onsubmit_error {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 1rem;
+}
+
 @media only screen and (max-width: 900px) {
     .signin-body {
         .signin-container {
