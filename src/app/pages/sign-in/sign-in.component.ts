@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,7 +9,9 @@ import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/f
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   LoginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -37,12 +40,12 @@ export class SignInComponent implements OnInit {
         this.formError['password'] = this.LoginForm.get('password')?.errors;
       }
     } else {
-      if(sessionStorage.getItem('signup')) {
-        const getSignupDetails = sessionStorage.getItem('signup') || '';
+      if(localStorage.getItem('signup')) {
+        const getSignupDetails = localStorage.getItem('signup') || '';
         const signupCredential = JSON.parse(getSignupDetails);
         const loginCredential = this.LoginForm.value;
         if(loginCredential.email === signupCredential.email && loginCredential.password === signupCredential.password) {
-          alert('Login Successful');
+          this.router.navigate(["/home"]);
         } else {
           if(loginCredential.email !== signupCredential.email && loginCredential.password !== signupCredential.password) {
             alert('Wrong Credential');

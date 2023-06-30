@@ -1,0 +1,30 @@
+@import "../../components/top-nav/top-nav.component.scss";
+
+.app_body {
+    height: calc(100vh - $navbar-height);
+    margin-top: $navbar-height;
+}
+
+.body_container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    
+    & > .body_content {
+        flex-grow: 1;
+        padding: 1rem 4rem;
+        transition: width 0.25s linear;
+    }
+
+    @media (max-width: 767px) {
+        & > .body_content {
+            padding: 1rem 2rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        & > .body_content {
+            padding: 1rem;
+        }
+    }
+}

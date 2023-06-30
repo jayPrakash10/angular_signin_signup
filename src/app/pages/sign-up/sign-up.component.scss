@@ -1,13 +1,15 @@
 .signup-body {
-    display: grid;
-    place-items: center;
-    height: 729px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
 
     .signup-container {
         width: 70%;
         background-color: #ffe7;
         display: flex;
         padding: 1em;
+        margin-left: auto;
+        margin-right: auto;
 
         .logo {
             flex: 1;
@@ -105,17 +107,19 @@
 
 @media only screen and (max-width: 900px) {
     .signup-body {
-        height: fit-content;
-
         .signup-container {
             flex-direction: column-reverse;
+            justify-content: flex-end;
 
             .logo {
+                flex: none;
                 margin-top: 2em;
+                border-right: none;
             }
 
             .signup-form {
                 padding: 1em 2em;
+                flex: none;
             }
         }
     }
@@ -124,7 +128,8 @@
 @media only screen and (max-width: 550px) {
     .signup-body {
         .signup-container {
-            width: 94%;
+            width: calc(100% - 2rem);
+            min-height: calc(100% - 2rem);
 
             .signup-form {
                 padding: 1em;
@@ -167,6 +172,7 @@
         .signup-container {
             padding: 0.5em 0;
             width: 100%;
+            min-height: calc(100% - 1rem);
 
             .logo {
                 img {

@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
         this.formError['password'] = this.SignupForm.get('password')?.errors;
       }
     } else {
-      sessionStorage.setItem("signup", JSON.stringify(this.SignupForm.value));
+      localStorage.setItem("signup", JSON.stringify(this.SignupForm.value));
       this.router.navigate(['/signin']);
       alert('Signup Successful\nTry logging in with same credentials');
     }

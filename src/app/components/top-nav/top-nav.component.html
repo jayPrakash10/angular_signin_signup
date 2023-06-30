@@ -1,0 +1,34 @@
+<div class="nav_bar">
+    <div class="nav_logo">
+        <a href="home">
+            <img src="../../../assets/image/angular.svg" alt="logo"/>
+        </a>
+    </div>
+
+    <div class="nav_log_out">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <div class="m_nav">
+        <button class="hamburger_container" [ngClass]="{'opened' : isMenuOpened }" (click)="toggleMenu()">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </button>
+    </div>
+</div>
+<div class="m_sidebar" [ngClass]="{'opened' : isMenuOpened }" id="m_sidebar" (click)="toggleMenuFromOutside($event)">
+    <div class="m_nav_container">
+        <ul class="m_nav_list">
+            <li class="m_nav_item">
+                <a href="home">Home</a>
+            </li>
+            <li class="m_nav_item">
+                <a href="about">About</a>
+            </li>
+            <li class="m_nav_log_out">
+                <button (click)="logout()">Logout</button>
+            </li>
+        </ul>
+    </div>
+</div>

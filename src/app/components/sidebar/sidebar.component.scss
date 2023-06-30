@@ -1,0 +1,37 @@
+@import "../top-nav/top-nav.component.scss";
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid lightgray;
+    box-shadow: 5px 0 10px -5px lightgray;
+    font-family: 'Geologica', sans-serif;
+    transition: 5s linear;
+
+    .nav_container {
+        padding: 2rem 1rem;
+        
+        .nav_list, ul {
+            margin: 0;
+            padding-inline-start: 0;
+
+            .nav_item, li {
+                list-style-type: none;
+                text-decoration: none;
+                padding: 0.5rem 0.75rem;
+
+                a {
+                    text-decoration: none;
+                    color: unset;
+                    display: block;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        display: none;
+    }
+}

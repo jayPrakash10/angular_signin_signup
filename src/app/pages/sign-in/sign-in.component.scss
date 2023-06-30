@@ -1,14 +1,16 @@
 .signin-body {
-    display: grid;
-    place-items: center;
-    height: 729px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
 
     .signin-container {
         width: 70%;
         background-color: #ffe7;
         display: flex;
         padding: 1em;
-
+        margin-left: auto;
+        margin-right: auto;
+        
         .logo {
             flex: 1;
             display: grid;
@@ -105,17 +107,19 @@
 
 @media only screen and (max-width: 900px) {
     .signin-body {
-        height: fit-content;
-
         .signin-container {
             flex-direction: column-reverse;
+            justify-content: flex-end;
 
             .logo {
+                flex: none;
                 margin-top: 2em;
+                border-right: none;
             }
 
             .signin-form {
                 padding: 1em 2em;
+                flex: none;
 
                 h1 {
                     margin-top: 0;
@@ -131,9 +135,12 @@
 
 @media only screen and (max-width: 550px) {
     .signin-body {
-        .signin-container {
-            width: 94%;
+        display: block;
 
+        .signin-container {
+            width: calc(100% - 2rem);
+            min-height: calc(100% - 2rem);
+            
             .signin-form {
                 padding: 1em;
 
@@ -178,6 +185,7 @@
         .signin-container {
             padding: 0.5em 0;
             width: 100%;
+            min-height: calc(100% - 1rem);
 
             .logo {
                 img {
