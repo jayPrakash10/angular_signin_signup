@@ -1,84 +1,84 @@
 <div class="signup-body body_bg">
-    <div class="signup-container">
-        <div class="logo">
-            <div>
-                <img src="../../../assets/image/angular.svg" alt="angular"/>
-                <p>Angular Signup page</p>
-            </div>
-        </div>
-        <div class="signup-form">
-            <div>
-                <h1>Sign Up</h1>
-                <div class="form">
-                    <form [formGroup]="SignupForm" (ngSubmit)="submit()">
-                        <div class="form-input">
-                            <div class="input-top">
-                                <label>First Name</label>
-                                <div *ngIf="formError['fname']">
-                                    <div *ngIf="formError['fname']['required']" class="error">
-                                        * first name is required
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <input type="text" id="fname" formControlName="fname"/>
-                            </div>
-                        </div>
-                        <div class="form-input">
-                            <div class="input-top">
-                                <label>Last Name</label>
-                                <div *ngIf="formError['lname']">
-                                    <div *ngIf="formError['lname']['required']" class="error">
-                                        * last name is required
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <input type="text" id="lname" formControlName="lname"/>
-                            </div>
-                        </div>
-                        <div class="form-input">
-                            <div class="input-top">
-                                <label>E-mail</label>
-                                <div *ngIf="formError['email']">
-                                    <div *ngIf="formError['email']['required']" class="error">
-                                        * email is required
-                                    </div>
-                                    <div *ngIf="formError['email']['email']" class="error">
-                                        * enter valid email
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <input type="email" id="email" formControlName="email"/>
-                                <img src="../../../assets/image/arroba.png" alt="mail"/>
-                            </div>
-                        </div>
-                        <div class="form-input">
-                            <div class="input-top">
-                                <label>Password</label>
-                                <div *ngIf="formError['password']">
-                                    <div *ngIf="formError['password']['required']" class="error">
-                                        * password is required
-                                    </div>
-                                    <div *ngIf="formError['password']['minlength']" class="error">
-                                        * password must be atleast 5 character
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <input type="password" id="pass" formControlName="password"/>
-                                <img src="../../../assets/image/password.png" alt="lock"/>
-                            </div>
-                        </div>
-
-                        <button type="submit">Sign Up</button>
-                    </form>
-                </div>
-                <div class="bottom-btn">
-                    Already have account? <a routerLink="/signin">Login Here</a>
-                </div>
-            </div>
-        </div>
+  <div class="signup-container">
+    <div class="logo">
+      <div>
+        <img src="../../../assets/image/angular.svg" alt="angular" />
+        <p>Angular Signup page</p>
+      </div>
     </div>
+    <div class="signup-form">
+      <div>
+        <h1>Sign Up</h1>
+        <div class="form">
+          <form [formGroup]="SignupForm" (ngSubmit)="submit()">
+            <div class="form-input">
+              <div class="input-top">
+                <label>First Name</label>
+                <div *ngIf="formError['fname']">
+                  <div *ngIf="formError['fname']['required']" class="error">
+                    * first name is required
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <input type="text" id="fname" formControlName="fname" />
+              </div>
+            </div>
+            <div class="form-input">
+              <div class="input-top">
+                <label>Last Name</label>
+                <div *ngIf="formError['lname']">
+                  <div *ngIf="formError['lname']['required']" class="error">
+                    * last name is required
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <input type="text" id="lname" formControlName="lname" />
+              </div>
+            </div>
+            <div class="form-input">
+              <div class="input-top">
+                <label>E-mail</label>
+                <div *ngIf="formError['email']">
+                  <div *ngIf="formError['email']['required']" class="error">
+                    * email is required
+                  </div>
+                  <div *ngIf="formError['email']['email']" class="error">
+                    * enter valid email
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <input type="email" id="email" formControlName="email" />
+                <img src="../../../assets/image/arroba.png" alt="mail" />
+              </div>
+            </div>
+            <div class="form-input">
+              <div class="input-top">
+                <label>Password</label>
+                <div *ngIf="formError['password']">
+                  <div *ngIf="formError['password']['required']" class="error">
+                    * password is required
+                  </div>
+                  <div *ngIf="formError['password']['minlength']" class="error">
+                    * password must be atleast 5 character
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <input type="password" id="pass" formControlName="password" />
+                <img src="../../../assets/image/password.png" alt="lock" />
+              </div>
+            </div>
+
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+        <div class="bottom-btn">
+          Already have account? <a routerLink="/signin">Login Here</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
